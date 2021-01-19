@@ -1,4 +1,4 @@
-package i.design.handlers
+package i.blog.handlers
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -6,6 +6,11 @@ import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 import org.springframework.web.filter.CorsFilter
 
+/**
+ * 解决跨域问题，但会导致XSS攻击
+ *
+ * @author dragon
+ */
 @Configuration
 class CorsConfig {
     private fun buildConfig(): CorsConfiguration {

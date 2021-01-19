@@ -1,4 +1,4 @@
-package i.design.utils
+package i.blog.utils
 
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime

@@ -1,4 +1,4 @@
-package i.design.utils
+package i.blog.utils
 
 import org.junit.jupiter.api.Test
 

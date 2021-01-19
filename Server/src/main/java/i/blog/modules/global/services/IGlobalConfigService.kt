@@ -1,4 +1,4 @@
-package i.design.modules.global.services
+package i.blog.modules.global.services
 
 
 interface IGlobalConfigService {

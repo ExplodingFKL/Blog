@@ -1,4 +1,4 @@
-package i.design.handlers.jwt
+package i.blog.handlers.jwt
 
 import com.github.open_edgn.security4k.asymmetric.rsa.RsaPrivate
 import com.github.open_edgn.security4k.asymmetric.rsa.RsaPublic

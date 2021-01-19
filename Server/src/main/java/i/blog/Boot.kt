@@ -1,4 +1,4 @@
-package i.design
+package i.blog
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

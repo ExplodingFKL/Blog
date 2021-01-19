@@ -1,8 +1,8 @@
-package i.design.modules.global.services.impl
+package i.blog.modules.global.services.impl
 
-import i.design.modules.global.models.entities.GlobalConfigEntity
-import i.design.modules.global.repository.GlobalConfigRepository
-import i.design.modules.global.services.IGlobalConfigService
+import i.blog.modules.global.models.entities.GlobalConfigEntity
+import i.blog.modules.global.repository.GlobalConfigRepository
+import i.blog.modules.global.services.IGlobalConfigService
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.stereotype.Service
 import javax.annotation.Resource
@@ -18,7 +18,7 @@ class GlobalConfigServiceImpl : IGlobalConfigService {
     @Resource
     private lateinit var globalConfigRepository: GlobalConfigRepository
 
-    private val rKey = "design_config"
+    private val rKey = "blog_config"
 
     override fun getConfig(key: String, defaultValue: String): String {
         val opsForHash = redisTemplate.opsForHash<String, String>()

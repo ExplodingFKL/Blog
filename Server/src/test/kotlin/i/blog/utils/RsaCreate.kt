@@ -1,4 +1,4 @@
-package i.design.utils
+package i.blog.utils
 
 import com.github.openEdgn.logger4k.getLogger
 import com.github.open_edgn.security4k.asymmetric.rsa.RsaKeyGenerator

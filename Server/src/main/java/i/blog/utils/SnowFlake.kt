@@ -1,7 +1,6 @@
-package i.design.utils
+package i.blog.utils
 
-import i.design.handlers.exceptions.ApplicationExceptions
-import org.springframework.beans.factory.annotation.Value
+import i.blog.handlers.exceptions.ExceptionUtils
 import org.springframework.stereotype.Component
 
 @Component
@@ -32,7 +31,7 @@ class SnowFlake {
 
         //当前时间小于过去时间,抛出异常表示时间指针被回拨
         if (timestamp < lastTimestamp) {
-            throw ApplicationExceptions.internalException("时间戳异常")
+            throw ExceptionUtils.internalException("时间戳异常")
         }
         //当前时间等于过去时间，表示同一时间出现两个
         if (timestamp == lastTimestamp) {
@@ -69,9 +68,7 @@ class SnowFlake {
         private const val DATA_CENTER_ID_BITS = 5
         private const val SEQUENCE_BITS = 12
 
-        /**
-         * 初始状态时间  2010-04-42 09:42:54
-         */
+
         private const val INITIAL_TIME = 1288834974657L
         private const val MAX_SEQUENCE = (-1L shl SEQUENCE_BITS).inv()
 

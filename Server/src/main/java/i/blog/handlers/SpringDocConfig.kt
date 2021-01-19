@@ -1,4 +1,4 @@
-package i.design.handlers
+package i.blog.handlers
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition
 import io.swagger.v3.oas.annotations.info.Info
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration
 
 @OpenAPIDefinition(
     info =
-    Info(title = "在线问卷调查系统", version = "1.0", description = "在线问卷调查系统 API 文档 v1.0")
+    Info(title = "博客系统", version = "1.0", description = "博客 API 文档 v1.0")
 )
 @Configuration
 class SpringDocConfig {
@@ -23,7 +23,7 @@ class SpringDocConfig {
                     .addSecuritySchemes(
                         "auth",
                         SecurityScheme()
-                            .name("注册用户支持")
+                            .name("TOKEN 支持")
                             .type(SecurityScheme.Type.HTTP)
                             .scheme("bearer").bearerFormat("JWT")
                     )

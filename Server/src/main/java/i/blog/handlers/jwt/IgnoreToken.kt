@@ -1,4 +1,4 @@
-package i.design.handlers.jwt
+package i.blog.handlers.jwt
 
 annotation class IgnoreToken {
 }

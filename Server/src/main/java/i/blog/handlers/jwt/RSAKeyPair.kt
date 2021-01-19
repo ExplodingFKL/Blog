@@ -1,4 +1,4 @@
-package i.design.handlers.jwt
+package i.blog.handlers.jwt
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Configuration

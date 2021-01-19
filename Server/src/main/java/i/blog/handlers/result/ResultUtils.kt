@@ -1,4 +1,4 @@
-package i.design.handlers.result
+package i.blog.handlers.result
 
 import org.springframework.http.HttpStatus
 

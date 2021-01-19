@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3306/class_design
-    username: design
-    password: design
+    url: jdbc:mariadb://localhost:3306/blog
+    username: blog
+    password: blog
   jpa:
     show-sql: true
   thymeleaf:
@@ -11,13 +11,10 @@ spring:
     database: 0
     host: 127.0.0.1
     port: 6379
-    password: local-redis-passwd
+    password: redis-local-password
 server:
   port: 8088
 app:
   security: # 此处密钥仅作为开发使用，生产环境请自定义密钥
     publicKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj52rxw1R2E+5jzkrZ/pukC4EVyO+QRqg+0GVpql9NMZtcGfpw2kmggmdMtIpOI4l3+kvAKcbH6Ji8oqjumH/NCjfb9CRxH+DZSEp19ucD2g/9vyk6xHMhrzlJB2L2me8RdI++39i7MMyg5FE2SaK0gRAK5IvQOrG8ouArdeavnx85FsKLJcqadtOyQL6UR1eCGqW9r+rUapTknVSBb2BdtdpbUywz8hY7u5HaJaVOKrD17OtQ9P8AArjoZKhoGlfSzLvLBe4gl6b9dv7xwpSOaWsOC7ukO5saDX+MJlfCsYUPwYI6Du4A2VQwuI7Op+23C2gzr9TT3UNb5Cg2lD4/wIDAQAB"
     privateKey: "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCPnavHDVHYT7mPOStn+m6QLgRXI75BGqD7QZWmqX00xm1wZ+nDaSaCCZ0y0ik4jiXf6S8ApxsfomLyiqO6Yf80KN9v0JHEf4NlISnX25wPaD/2/KTrEcyGvOUkHYvaZ7xF0j77f2LswzKDkUTZJorSBEArki9A6sbyi4Ct15q+fHzkWwoslypp207JAvpRHV4Iapb2v6tRqlOSdVIFvYF212ltTLDPyFju7kdolpU4qsPXs61D0/wACuOhkqGgaV9LMu8sF7iCXpv12/vHClI5paw4Lu6Q7mxoNf4wmV8KxhQ/BgjoO7gDZVDC4js6n7bcLaDOv1NPdQ1vkKDaUPj/AgMBAAECggEAX59n5J0lxZUvxAEYuZ6xRyaclTijUM3eKe09Kz7msuD7tUA7EXVNwn+MP25XK+TZqwCj3xdko+eHYl6VLWBaf+xG+TgyFlegsREnvyXl/ww2qskFNc8gEwZqu2VA3Sb84LBgZywmPeaqF5f982gKPlO+NkSbWen4lT31a8qGqhVRaa4ChnhKd7iV6Lp6IHe8Gyqp/vyPJ59TxgvEnrM4mGxXudcZ/10rl1qRRcJ4YadDHIviM1ZbNnSwU/kiuYiVh49OIKSviMA66XJbEYlIKS3jpDjvIfD6EAgbGsZWWao4hXqVQEgO/cSSsFbZAuSnaeq2KINFhEUt4sewMIPj4QKBgQDMQMxXG2sRZkK1HWIOvEExQAIUmQErrt85AABDwHzRi0EhgBkxPwTq3XSHKxYXrYzk+bD7arTzSaKDv1Vm45hfscT8HJglF3ln1ltbqV+3QcbWj0RPo/VeiBuMKjORKNvcjOgqJdRPW8D0W6Z4ARbzctDlMmH58Bn58vp/J4gcqwKBgQC0ACM4VSOk5mKp8t8pPDD7FiNAcCaPwa9GkH0c2jikZm443xq94QZjFSuyTIux67VYPSyvLW80kTydsQtGsKQiom+VDXa0T0a13ItGwTR2lIXv9CvcynnXHw1bIL4UeIWaMB2SkbPYOqQZonpvRghEyvLNkUenYQeRgQMwLR3s/QKBgEVg+UfZS1wEpUIJ8gXZUjeda1d9xVUGOFKPOofI+Vzf9Uag0W3V3yC8Clnje8SdMc+RNNmhnEdLSsV/l020n0xaAPQ17kQjHhz0ReHzvUxtLlIxJd37blwm1Vyd9Rgojc3zmuS+Jsix/O/Dtd7rV9VnuacwnvEb6mbpbscEMYqzAoGBAK9gyvAiFB6g0lTf7IsSuG6L/UDVhNzgS9SnBx/LhxC3NIF472c+DqkPgYmxhxKNpB0bTaRI0mcXc0X5sBDqHqIYPjut6JB6BV1ASvtfV6yJvY40C2CObvQoryyw1ELBwvqeEtIx4Fa3nBfV9RDh3UCZtMSR3oy4v1UHrIGOE/BJAoGAQxWyEthauH+OxlVusmxQaiBQ7PTdppGzDnPLLE9cku97ppo0tOmyTF6j55GifQwdJhHpjOLU3F/ti7KkTiCzhS65WWOs5aLcsbKpvwSscbQV1SE7yVAHcCxUDFPzrvVBu32qN+XZsuxB2MJylvha8AgsySNWD02hldKE12PNyAY="
-logging:
-  level:
-    i.design: trace

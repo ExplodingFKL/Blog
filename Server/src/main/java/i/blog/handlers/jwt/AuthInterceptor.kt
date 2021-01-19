@@ -1,7 +1,6 @@
-package i.design.handlers.jwt
+package i.blog.handlers.jwt
 
-import i.design.handlers.exceptions.ApplicationExceptions
-import i.design.modules.token.services.ITokenService
+import i.blog.handlers.exceptions.ExceptionUtils
 import org.springframework.stereotype.Component
 import org.springframework.web.context.request.WebRequest
 import org.springframework.web.method.HandlerMethod
@@ -17,6 +16,7 @@ import javax.servlet.http.HttpServletResponse
 @Component
 class AuthInterceptor : HandlerInterceptor {
 
+
     @Resource(name = "token")
     private lateinit var tokenService: ITokenService<out Annotation>
 
@@ -25,34 +25,36 @@ class AuthInterceptor : HandlerInterceptor {
             return true
         }
         val method = handler.method
-        if (method.isAnnotationPresent(IgnoreToken::class.java)) {
+        val annotation = tokenService.verifyAnnotation.java
+        if (method.isAnnotationPresent(IgnoreToken::class.java) ||
+            method.isAnnotationPresent(annotation).not()
+        ) {
             return true
         }
 
-        val annotation = tokenService.verifyAnnotation.java
-        if (method.isAnnotationPresent(annotation) && tokenService.verifyToken0(
+        if (tokenService.verifyToken0(
                 try {
                     getToken(request)
                 } catch (e: Exception) {
-                    throw ApplicationExceptions.forbidden(request.requestURI)
+                    throw ExceptionUtils.forbidden(request.requestURI)
                 },
                 method.getAnnotation(annotation)
             )
         ) {
             return true
         } else {
-            throw ApplicationExceptions.forbidden(request.requestURI)
+            throw ExceptionUtils.forbidden(request.requestURI)
         }
     }
 
     companion object {
         private const val headerName = "authorization"
         fun getToken(request: HttpServletRequest): String {
-            return request.getHeader(headerName) ?: throw ApplicationExceptions.forbidden(request.requestURI)
+            return request.getHeader(headerName) ?: throw ExceptionUtils.forbidden(request.requestURI)
         }
 
         fun getHeader(request: WebRequest): String {
-            return request.getHeader(headerName) ?: throw ApplicationExceptions.forbidden(request.contextPath)
+            return request.getHeader(headerName) ?: throw ExceptionUtils.forbidden(request.contextPath)
         }
     }
 }

@@ -1,4 +1,4 @@
-package i.design.modules.global.models.entities
+package i.blog.modules.global.models.entities
 
 import javax.persistence.Column
 import javax.persistence.Entity
