@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: true
+  profiles:
+    active: dev
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
